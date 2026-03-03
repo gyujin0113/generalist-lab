@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-border py-8 text-sm text-muted-foreground">
       <Container className="flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p>&copy; 2025 WebManager. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} WebManager. All rights reserved.</p>
         <div className="flex gap-6">
           <a href="mailto:contact@webmanager.co.kr" className="hover:text-foreground transition-colors py-2">
             이메일 문의

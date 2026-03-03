@@ -25,6 +25,9 @@ const jsonLd = {
       url: "https://webmanager.co.kr",
       description:
         "홈페이지 제작 · 유지보수 에이전시. 수정 무제한, 빠른 제작, 합리적인 가격.",
+      email: "contact@webmanager.co.kr",
+      priceRange: "₩₩",
+      sameAs: ["https://open.kakao.com/me/webmanager"],
       areaServed: {
         "@type": "Country",
         name: "KR",

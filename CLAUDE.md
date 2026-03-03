@@ -87,10 +87,47 @@ This is a **static landing page** for "WebManager," a Korean web agency (webmana
 - `public/logo-icon_rectangular.svg` / `logo-icon_rectangular.png` — 라운드 사각형 아이콘만 (검정 배경 꽉 참)
 - `src/components/ui/Logo.tsx` — 헤더용 인라인 SVG 컴포넌트 (라운드 사각형)
 
+## 사이트 점검 결과 (2026-03-03)
+
+### HIGH — 수정 완료
+| # | 이슈 | Before | After | 파일 |
+|---|------|--------|-------|------|
+| 1 | Footer 연도 하드코딩 | `© 2025` | `© {new Date().getFullYear()}` (빌드 시 평가) | `CTA.tsx`, `Footer.tsx` |
+| 2 | sitemap.xml `<lastmod>` 누락 | `<loc>` + `<changefreq>` 만 | `<lastmod>2026-03-03</lastmod>` 추가 | `public/sitemap.xml` |
+| 3 | JSON-LD 연락처/서비스 정보 부족 | name, url, description만 | email, priceRange, sameAs(카카오톡) 추가 | `page.tsx` |
+
+### MEDIUM — 미수정 (다음 작업)
+| # | 이슈 | 파일 |
+|---|------|------|
+| 4 | ScrollReveal delay 불일치 (0.08/0.1/0.15 혼재) | Problem, Solution, Pricing, Process, Portfolio |
+| 5 | Process 카드 `rounded-xl` → `rounded-2xl` 통일 필요 | `Process.tsx` |
+| 6 | 카드 배경 opacity 불일치 (`0.02` vs `0.04`) | FeatureCard, Process, ContactForm |
+| 7 | FAQ 서브텍스트 없음 (다른 섹션은 전부 있음) | `FAQ.tsx` |
+| 8 | GSAP cleanup 함수 누락 (메모리 누수 가능) | ScrollReveal, HeroTitle, Hero |
+| 9 | Analytics 미설정 (GA4/네이버) | `layout.tsx` |
+
+### LOW — 백로그
+| # | 이슈 | 파일 |
+|---|------|------|
+| 10 | Portfolio Coming Soon 2개 → 신뢰도 약화 | `Portfolio.tsx` |
+| 11 | Hero 보조 버튼 "서비스 소개서 보기" → "가격 확인하기"가 더 직관적 | `Hero.tsx` |
+| 12 | Telegram 알림 실패 시 console.error 없음 | `ContactForm.tsx` |
+| 13 | OG Image 폰트 로딩 에러 핸들링 없음 | `opengraph-image.tsx` |
+
+### SEO TODO (추가 작업)
+- [x] ~~**OG Image 제작**~~ (완료)
+- [ ] **네이버 서치어드바이저 등록**: https://searchadvisor.naver.com — 사이트 소유 확인 + sitemap 제출
+- [ ] **네이버 사이트 인증 메타태그**: verification 코드 받은 후 `layout.tsx`에 추가
+- [ ] **Google Search Console 등록**: sitemap 제출 + 색인 요청
+- [ ] **Google Analytics 4 설정**: 전환 추적 (폼 제출, 버튼 클릭)
+- [ ] **블로그/콘텐츠 SEO**: 홈페이지 제작 관련 콘텐츠 페이지 확장 (장기)
+
 ## 작업 우선순위
 
 1. ~~**모바일 최적화** (완료)~~ — clamp() 타이포, 그리드 중간 브레이크포인트, GSAP 모바일 최적화, 터치 타겟 44px+, prefers-reduced-motion 지원
 2. ~~**OG Image** (완료)~~ — 빌드 타임 자동 생성, 카카오톡/SNS 링크 미리보기 대응
 3. ~~**Contact Form** (완료)~~ — Web3Forms + Telegram 알림, CTA 센터 폼 레이아웃, 카카오톡 보조 링크
-4. SEO 추가 작업 (네이버/구글 등록)
-5. 기능 개선 및 콘텐츠 업데이트
+4. ~~**사이트 점검 HIGH 항목** (완료)~~ — Footer 연도, sitemap lastmod, JSON-LD 보강
+5. 사이트 점검 MEDIUM 항목 (디자인 일관성, GSAP cleanup, Analytics)
+6. SEO 추가 작업 (네이버/구글 등록)
+7. 기능 개선 및 콘텐츠 업데이트

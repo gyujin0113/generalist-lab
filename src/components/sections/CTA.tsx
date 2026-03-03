@@ -40,7 +40,7 @@ export default function CTA() {
 
       <footer className="border-t border-white/[0.06] py-6 text-sm text-muted-foreground">
         <Container className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>&copy; 2025 WebManager. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} WebManager. All rights reserved.</p>
           <a
             href="mailto:contact@webmanager.co.kr"
             className="hover:text-foreground transition-colors cursor-pointer py-2"
