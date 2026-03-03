@@ -68,7 +68,7 @@ This is a **static landing page** for "WebManager," a Korean web agency (webmana
 - **Metadata**: `layout.tsx`에 title, description, keywords, OG, Twitter Card, canonical URL, robots 설정 완료.
 - **JSON-LD**: `page.tsx`에 WebSite + ProfessionalService 구조화 데이터 삽입.
 - **sitemap.xml / robots.txt**: `public/`에 정적 파일로 배치 (static export 제약).
-- **Favicon**: `src/app/icon.svg` — 브라우저 창 + W 레터 SVG 파비콘.
+- **Favicon**: `src/app/icon.svg` — 원형 배경 + WM 지그재그 로고 SVG 파비콘.
 - **OG Image**: `src/app/opengraph-image.tsx` — 빌드 타임 자동 생성 (1200x630 PNG). Noto Sans KR 폰트를 Google Fonts API에서 필요 글자만 로드. `dynamic: "force-static"` 필수 (static export 호환).
 
 ### SEO TODO (추가 작업)
